@@ -59,3 +59,9 @@ TagManager:
   - name: Trees
     uniqueID: 2880436039
     locked: 0
+  - name: vehicles
+    uniqueID: 546703771
+    locked: 0
+  - name: UI
+    uniqueID: 183403757
+    locked: 0
