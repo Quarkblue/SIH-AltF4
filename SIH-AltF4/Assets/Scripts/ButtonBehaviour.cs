@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonBehaviour : MonoBehaviour
 {
@@ -24,10 +25,11 @@ public class ButtonBehaviour : MonoBehaviour
         
         if(transform.parent.name == "bus")
         {
-            Debug.Log("Button pressed");
-
             player.transform.SetParent(transform.parent);
             transform.gameObject.SetActive(false);
+        }else if(transform.parent.name == "School")
+        {
+            SceneManager.LoadScene("Classroom");
         }
     }
 
