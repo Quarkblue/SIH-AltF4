@@ -47,12 +47,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         playerExists = GameObject.FindGameObjectWithTag("Player");
         if (SceneManager.GetActiveScene().name == "Classroom" && !playerExists)
         {
             vcam = GameObject.Find("Virtual Camera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
             GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPos");
-            Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            GameObject player = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            player.transform.localScale = new Vector3(1, 1, 1);
             vcam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
 
         }
