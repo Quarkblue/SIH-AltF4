@@ -46,14 +46,12 @@ public class PlayerScript : MonoBehaviour
         transform.position = transform.parent.position;
         var busAnimator = transform.parent.GetComponent<Animator>();
         busAnimator.SetBool("hasClimbed", true);
-        yield return new WaitForSeconds(9);
+        yield return new WaitForSeconds(7);
 
         transform.parent = null;
-        busAnimator.SetBool("hasClimbed", false);
         busAnimator.SetBool("hasLeft", true);
 
         yield return new WaitForSeconds(2.5f);
-        busAnimator.gameObject.SetActive(false);
     }
 
     private IEnumerator schoolSequence()

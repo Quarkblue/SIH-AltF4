@@ -27,6 +27,7 @@ public class ButtonBehaviour : MonoBehaviour
             Debug.Log("Button pressed");
 
             player.transform.SetParent(transform.parent);
+            transform.gameObject.SetActive(false);
         }
     }
 
