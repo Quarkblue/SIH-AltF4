@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI textArea;
+
 
     [SerializeField] Transform startPos;
     public GameObject playerPrefab;
-    public Cinemachine.CinemachineVirtualCamera vcam;
+    private Cinemachine.CinemachineVirtualCamera vcam;
     public List<GameObject> SpawnPositions;
+    public GameObject playerExists;
 
     private void Awake()
     {
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Hello");
         SpawnPositions = GameObject.FindGameObjectsWithTag("SpawnPos").ToList();
 
+
+        //level 1 init
+        vcam = GameObject.Find("Virtual Camera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
         Instantiate(playerPrefab, SpawnPositions[PlayerPrefs.GetInt("SpawnPos")].transform.position, Quaternion.identity);
         vcam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
         vcam.gameObject.GetComponent<Animator>().SetBool("hasStarted", true);
@@ -42,7 +47,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        playerExists = GameObject.FindGameObjectWithTag("Player");
+        if (SceneManager.GetActiveScene().name == "Classroom" && !playerExists)
+        {
+            vcam = GameObject.Find("Virtual Camera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
+            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPos");
+            Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            vcam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
+
+        }
+
+
     }
 
     //private IEnumerator changeText(string text)

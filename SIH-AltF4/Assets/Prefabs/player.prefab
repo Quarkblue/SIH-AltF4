@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4602646539417359585}
   - component: {fileID: 1692947140499798767}
   - component: {fileID: 2669225184799159925}
+  - component: {fileID: 6109193902520743651}
   m_Layer: 0
   m_Name: JoyStick
   m_TagString: Untagged
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!210 &6109193902520743651
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875408960245857856}
+  m_Enabled: 1
+  m_SortingLayerID: 183403757
+  m_SortingLayer: 8
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &8886110140101369213
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,10 +144,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8886110140101369213}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.62, y: 1.15, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3363684332552592030}
   m_Father: {fileID: 0}

@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class ButtonBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    private DialogueDisplayer textDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
+        textDisplay = GameObject.FindGameObjectWithTag("GameController").GetComponent<DialogueDisplayer>();
         player = GameObject.FindWithTag("Player");
     }
 
@@ -27,9 +29,13 @@ public class ButtonBehaviour : MonoBehaviour
         {
             player.transform.SetParent(transform.parent);
             transform.gameObject.SetActive(false);
-        }else if(transform.parent.name == "School")
+            textDisplay.ClearText();    
+
+        }
+        else if(transform.parent.name == "School")
         {
             SceneManager.LoadScene("Classroom");
+            textDisplay.ClearText();
         }
     }
 
