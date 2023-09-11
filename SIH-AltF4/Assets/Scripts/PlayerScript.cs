@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {   
     public float walkSpeed;
-
+    [SerializeField] public FixedJoystick joystick;
     private Rigidbody2D rb;
     float horizontal;
     float vertical;
@@ -25,10 +25,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = joystick.Horizontal;
+        vertical = joystick.Vertical;
 
-        if(transform.parent && transform.parent.name == "bus")
+        if (transform.parent && transform.parent.name == "bus")
         {
             StartCoroutine(busSequence());
         }
