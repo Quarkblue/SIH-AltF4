@@ -40,6 +40,10 @@ public class ButtonBehaviour : MonoBehaviour
             SceneManager.LoadScene("Classroom");
             textDisplay.ClearText();
         }
+        else if(transform.parent.name == "sitBtn")
+        {
+            Debug.Log("no");
+        }
     }
 
 }

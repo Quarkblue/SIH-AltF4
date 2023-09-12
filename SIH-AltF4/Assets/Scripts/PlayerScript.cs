@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
     float horizontal;
     float vertical;
+    public GameObject sitbtn;
 
     List<GameObject> spawnPositions;
 
@@ -23,6 +24,12 @@ public class PlayerScript : MonoBehaviour
         busStart = GameObject.Find("busStart").GetComponent<AudioSource>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
         rb = GetComponent<Rigidbody2D>();
+        if(SceneManager.GetActiveScene().name == "Classroom")
+        {
+            sitbtn = GameObject.Find("sitBtn");
+            sitbtn.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -89,6 +96,11 @@ public class PlayerScript : MonoBehaviour
             // school enter sequence
             StartCoroutine(schoolSequence());
         }
+
+        if(collision.gameObject.CompareTag("desks"))
+        {
+            sitbtn.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -97,6 +109,9 @@ public class PlayerScript : MonoBehaviour
         {
             collision.gameObject.transform.Find("ClimbBusBtn").gameObject.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("desks"))
+        {
+           sitbtn.SetActive(false);
+        }
     }
-
 }
