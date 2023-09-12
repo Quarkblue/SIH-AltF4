@@ -18,9 +18,11 @@ public class PlayerScript : MonoBehaviour
     public GameObject sitbtn;
 
     List<GameObject> spawnPositions;
+    public Animator playerAnim;
 
     void Start()
     {
+        playerAnim = GetComponent<Animator>();
         Debug.Log("Player instantiated");
         if(SceneManager.GetActiveScene().name.ToString() == "Level1")
         {
@@ -42,6 +44,9 @@ public class PlayerScript : MonoBehaviour
     {
         horizontal = joystick.Horizontal;
         vertical = joystick.Vertical;
+        playerAnim.SetFloat("Horizontal", horizontal);
+        playerAnim.SetFloat("Vertical", vertical);
+        playerAnim.SetFloat("speed", new Vector2(vertical, horizontal).sqrMagnitude);
 
         //wasd
         //horizontal = Input.GetAxisRaw("Horizontal");
