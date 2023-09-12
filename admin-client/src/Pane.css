@@ -1,0 +1,71 @@
+.left{
+    display: flex;
+    height: 96vh;
+    width: 15%;
+    background-color: beige;
+    padding:1%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right{
+    display: flex;
+    height: 100vh;
+    width: 85%;
+    background-color: rgb(33, 55, 55);
+    color: beige;
+    flex-direction: column;
+}
+
+hr{
+    margin-top: 15px;
+    width: 100%;
+}
+
+.neeche{
+    background-color: blanchedalmond;
+    border: 1px dashed gray;
+    border-radius: 15px;
+    width: 90%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+.account{
+    padding: 10%;
+}
+
+.image{
+    height: 10%;
+    width: 10%;
+}
+img{
+    margin-left: 5px;
+}
+
+li{
+    padding: 7%;
+    border-bottom: 1px solid rgb(137, 137, 137) ;
+    list-style: none;
+    font-size: large;
+    cursor: pointer;
+}
+.headingr{
+    height: 20%;
+    /* background-color: pink; */
+    width: 100%;
+    display: flex;
+    align-items:end;
+    font-size: 70px;
+    padding-left: 2%;
+}
+
+.lister{
+    height: 75%;
+    width: 100%;
+    background-color: aqua;
+}
