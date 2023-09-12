@@ -33,6 +33,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // if playerPrefs.GetInt("hasStarted) == 1:
+            // spawn at point 1 near house
+
+        // if playerPrefs.GetInt("hasStarted") == 0 and player:
+            // spawn at
+
+
+
         Debug.Log("Hello");
         SpawnPositions = GameObject.FindGameObjectsWithTag("SpawnPos").ToList();
 

@@ -63,9 +63,9 @@ TagManager:
   - name: vehicles
     uniqueID: 546703771
     locked: 0
-  - name: UI
-    uniqueID: 183403757
-    locked: 0
   - name: classroomObjects
     uniqueID: 3920233743
+    locked: 0
+  - name: UI
+    uniqueID: 183403757
     locked: 0

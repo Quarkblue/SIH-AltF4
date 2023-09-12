@@ -21,7 +21,12 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        busStart = GameObject.Find("busStart").GetComponent<AudioSource>();
+        Debug.Log("Player instantiated");
+        if(SceneManager.GetActiveScene().name.ToString() == "Level1")
+        {
+            Debug.Log("haan bhai yahi hoon");
+            busStart = GameObject.Find("busStart").GetComponent<AudioSource>();
+        }
         joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
         rb = GetComponent<Rigidbody2D>();
         if(SceneManager.GetActiveScene().name == "Classroom")
