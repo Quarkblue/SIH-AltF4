@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: corrugated2
+  m_Name: tilex1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: eec7396dca39bf249ba6a35168eb9a87, type: 3}
-  m_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9023e6babf41d4ddcb40d477f92e9b76, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0
