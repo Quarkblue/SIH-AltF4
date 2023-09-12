@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
 {   
     public float walkSpeed;
     [SerializeField] public FixedJoystick joystick;
+    [SerializeField] private AudioSource busStart;
     private Rigidbody2D rb;
     float horizontal;
     float vertical;
@@ -19,6 +20,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        busStart = GameObject.Find("busStart").GetComponent<AudioSource>();
         joystick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -80,6 +82,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.name == "bus")
         {
             collision.gameObject.transform.Find("ClimbBusBtn").gameObject.SetActive(true);
+            busStart.Play();
         }
         if(collision.gameObject.name == "School")
         {

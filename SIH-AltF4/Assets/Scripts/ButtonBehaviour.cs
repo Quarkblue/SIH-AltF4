@@ -7,6 +7,7 @@ public class ButtonBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     private DialogueDisplayer textDisplay;
+    [SerializeField] private AudioSource src;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,9 @@ public class ButtonBehaviour : MonoBehaviour
         {
             player.transform.SetParent(transform.parent);
             transform.gameObject.SetActive(false);
-            textDisplay.ClearText();    
+            textDisplay.ClearText();
+            src.Play();
+            
 
         }
         else if(transform.parent.name == "School")
