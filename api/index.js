@@ -19,6 +19,7 @@ app.use(express.json());
 const PORT = process.env.PORT;
 const MONGO = process.env.MONGO;
 
+
 //hc
 app.use("/api/v1/hc",(_,res)=>{
     res.status(200).send({
@@ -30,7 +31,11 @@ app.get("/api/v1/home",getHome);
 app.post("/api/v1/home",postHome);
 
 //listener
-mongoose.connect(MONGO).then(
+mongoose.connect(MONGO,{
+    authSource:"admin",
+    "useNewUrlParser":true,
+    "useUnifiedTopology":true
+}).then(
     ()=>{
         app.listen(PORT,()=>{
             console.log("listening");
