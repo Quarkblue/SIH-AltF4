@@ -9,7 +9,7 @@
 .right{
     display: flex;
     height: 100vh;
-    width: 85%;
+    width: 100%;
     flex-direction: column;
 }
 
@@ -19,7 +19,6 @@ hr{
 }
 
 .neeche{
-    border: 1px gray;
     border-radius: 2px;
     width: 95%;
     height: 5%;
@@ -27,7 +26,8 @@ hr{
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-bottom: 15%;
+    margin-top: 60vh;
+    margin-bottom: 5%;
     cursor: pointer;
 }
 
@@ -49,11 +49,16 @@ li{
     width: 100%;
     display: flex;
     align-items:end;
-    padding-left: 2%;
     padding-bottom: 2%;
 }
 
-.lister{
+.lister {
     height: 100%;
-    width: 45%;
-}
+    width: 100%; /* Default width for mobile */
+  
+    @media (min-width: 768px) {
+      /* Set width to 45% for screens with a minimum width of 768px (larger views) */
+      width: 45%;
+    }
+  }
+  

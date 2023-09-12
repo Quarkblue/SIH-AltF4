@@ -4,18 +4,18 @@ import { FaBars } from "react-icons/fa"; // Import the FaBars icon from react-ic
 
 export default function LeftPane() {
   return (
-    <div className="left bg-[#262942] text-white">
-      <div className="my-10">
+    <div className="md:block hidden left bg-[#262942] text-white">
+      <div className="my-4 md:my-10">
         <span className="heading text-lg text-center">
-          <h2 className="flex justify-between items-center px-5 pb-5">
+          <h2 className="flex justify-evenly items-center pb-3 md:pb-5">
             DASHBOARD <button className="hover:bg-[#371D42]"><FaBars className="hamburger-icon" /></button>
           </h2>
         </span>
-        <ul className="py-2 text-[18px] text-md">
-          <li className="py-2 px-5 bg-transparent hover:bg-[#4D3791] rounded-md">
+        <ul className="py-2 text-[16px] md:text-[18px] text-md">
+          <li className="py-2 px-4 md:px-5 bg-transparent hover:bg-[#4D3791] rounded-md"> 
             Messages
           </li>
-          <li className="py-2 px-5 bg-transparent hover:bg-[#4D3791] rounded-md">
+          <li className="py-2 px-4 md:px-5 bg-transparent hover:bg-[#4D3791] rounded-md">
             Reports
           </li>
         </ul>
@@ -35,3 +35,4 @@ export default function LeftPane() {
     </div>
   );
 }
+

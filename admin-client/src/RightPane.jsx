@@ -29,13 +29,13 @@ export default function RightPane() {
 
   return (
     <div className='right bg-gradient-to-b from-gray-900 to-gray-800 text-white'>
-      <h1 className='headingr font-medium text-4xl md:text-5xl'>Filed Reports</h1>
+      <h1 className='headingr pl-6 md:pl-5 font-medium text-4xl md:text-5xl'>Filed Reports</h1>
       <div className="lister bg-opacity-80 backdrop-blur-lg p-6 rounded-lg mt-6">
         {/* {data.map((item, index) => ( */}
-          <div  className="item mb-4 space-y-2 pb-2">
+          <div className="item mb-4 space-y-2 pb-2">
             <div className="rounded-lg bg-gray-700 p-4">
-              <p className="text-lg">Phone Number: </p>
-              <p className="text-lg">Report: </p>
+              <p className="text-lg">Phone Number:</p>
+              <p className="text-lg">Report:</p>
             </div>
           </div>
         {/* ))} */}
@@ -43,6 +43,7 @@ export default function RightPane() {
     </div>
   );
 }
+
 
 
 
