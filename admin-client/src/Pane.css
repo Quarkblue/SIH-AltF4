@@ -13,6 +13,7 @@
     width: 85%;
     background-color: rgb(33, 55, 55);
     color: beige;
+    flex-direction: column;
 }
 
 hr{
@@ -61,4 +62,10 @@ li{
     align-items:end;
     font-size: 70px;
     padding-left: 2%;
+}
+
+.lister{
+    height: 75%;
+    width: 100%;
+    background-color: aqua;
 }
