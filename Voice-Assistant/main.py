@@ -91,7 +91,7 @@ def takeCommand():
         r.pause_threshold = 1
         audio = r.listen(source)
         try:
-            query = r.recognize_google(audio, language="en-in")
+            query = r.recognize_google(audio, language="en-in, hi-in")
             query = query.lower()+ ". Explain in very minimum words in such a way that a child of age 10 can understand it."
             print(f"User said: {query}")
             return query
