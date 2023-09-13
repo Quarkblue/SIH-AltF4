@@ -29,6 +29,10 @@ public class mainMenu : MonoBehaviour
        Application.Quit();
     }
 
+    public void onHelp()
+    {
+        SceneManager.LoadScene("HelpScene");
+    }
 
     IEnumerator onStartSequence()
     {

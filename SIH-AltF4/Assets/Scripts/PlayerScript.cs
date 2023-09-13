@@ -107,10 +107,16 @@ public class PlayerScript : MonoBehaviour
             StartCoroutine(schoolSequence());
         }
 
-        if(collision.gameObject.CompareTag("desks"))
+        if(collision.gameObject.CompareTag("baitho"))
         {
             sitbtn.SetActive(true);
         }
+        if(collision.gameObject.CompareTag("schoolExit"))
+        {
+            GameManager.Instance.afterSchool = true;
+            SceneManager.LoadScene("Level1");
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)

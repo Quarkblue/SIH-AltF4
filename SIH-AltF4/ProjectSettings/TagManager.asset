@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SpawnPos
   - baitho
+  - schoolExit
+  - desks
   layers:
   - Default
   - TransparentFX

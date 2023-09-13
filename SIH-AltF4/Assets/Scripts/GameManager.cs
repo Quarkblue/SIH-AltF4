@@ -15,8 +15,14 @@ public class GameManager : MonoBehaviour
     public List<GameObject> SpawnPositions;
     public GameObject playerExists;
 
+    public static GameManager Instance;
+
+    public bool afterSchool;
+
     private void Awake()
     {
+        Instance = this;
+        afterSchool = false;
         if (FindObjectsOfType<GameManager>().Length > 1)
         {
             PlayerPrefs.SetInt("hasStarted", 0);
@@ -33,14 +39,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if playerPrefs.GetInt("hasStarted) == 1:
-            // spawn at point 1 near house
-
-        // if playerPrefs.GetInt("hasStarted") == 0 and player:
-            // spawn at
-
-
-
         Debug.Log("Hello");
         SpawnPositions = GameObject.FindGameObjectsWithTag("SpawnPos").ToList();
 
@@ -65,6 +63,14 @@ public class GameManager : MonoBehaviour
             player.transform.localScale = new Vector3(1, 1, 1);
             vcam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
 
+        }
+        if(SceneManager.GetActiveScene().name == "Level1" && !playerExists && afterSchool)
+        {
+            vcam = GameObject.Find("Virtual Camera").GetComponent<Cinemachine.CinemachineVirtualCamera>();
+            GameObject spawnPoint = GameObject.Find("SchoolPos");
+            Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            vcam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
+            afterSchool = false;
         }
 
 
