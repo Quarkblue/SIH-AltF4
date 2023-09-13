@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour
             afterSchool = false;
         }
 
+        if(SceneManager.GetActiveScene().name == "Hospital" && !playerExists)
+        {
+            GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPos");
+            GameObject player = Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            player.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+        }
 
     }
 

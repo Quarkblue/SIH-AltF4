@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HelpScene.unity
     guid: 53e64b284b865b141b4a8cff338521b8
+  - enabled: 1
+    path: Assets/Scenes/Game/Hospital.unity
+    guid: 204837d743fc3431887c16f08fef64d0
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: b667d6008c59c824787921e69cf01a72, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d351ee635905d2c4f9325ebec0a4bfce, type: 2}

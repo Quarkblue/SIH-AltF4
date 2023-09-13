@@ -106,6 +106,10 @@ public class PlayerScript : MonoBehaviour
             // school enter sequence
             StartCoroutine(schoolSequence());
         }
+        if(collision.gameObject.name == "hospital")
+        {
+            SceneManager.LoadScene("Hospital");
+        }
 
         if(collision.gameObject.CompareTag("baitho"))
         {
